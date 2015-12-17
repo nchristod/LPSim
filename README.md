@@ -29,3 +29,7 @@ public interface Senseable {
 ```
 A simple usage scenario is shown at TestSimInteg.java.
 
+### Coupling with a controller / Stubbing the boundaries
+
+- Import the GUI and run the frame as you would.
+- At your boundary objects that are supposed to talk to the real Sensors call the `get(String name)` method on the GUI frame to get the device you need. The parameter `name` expects a string consisting of "siloname" + "device". For example `get("s1In")` returns the InValve of s1. For naming details see the method implementation. 
